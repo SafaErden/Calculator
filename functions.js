@@ -3,8 +3,9 @@ let screen = '';
 let lastOperator = '+';
 let lastResult = 0;
 
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', function () {
+document.querySelectorAll('.btn').forEach(btn => {btn.addEventListener('click', calculator)});
+
+function calculator() {
         let input = this.textContent;
         let screenValue = document.querySelector('.screen');
 
@@ -47,9 +48,7 @@ document.querySelectorAll('.btn').forEach(btn => {
         else {
             screenValue.textContent += input;
         }
-
-    })
-});
+}
 function getResult(newValue, newOperator) {
     lastResult = Number(lastResult);
     newValue = Number(newValue);
